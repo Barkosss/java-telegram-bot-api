@@ -13,7 +13,34 @@ public class Chat implements Serializable {
     private final static long serialVersionUID = 0L;
 
     public enum Type {
-        @SerializedName("private") Private, group, supergroup, channel
+        @SerializedName("private") PRIVATE,
+        @SerializedName("group") GROUP,
+        @SerializedName("supergroup") SUPERGROUP,
+        @SerializedName("channel") CHANNEL;
+
+        /**
+         * @deprecated use {@link #PRIVATE} instead
+         */
+        @Deprecated
+        public static final Type Private = PRIVATE;
+
+        /**
+         * @deprecated use {@link #GROUP} instead
+         */
+        @Deprecated
+        public static final Type group = GROUP;
+
+        /**
+         * @deprecated use {@link #SUPERGROUP} instead
+         */
+        @Deprecated
+        public static final Type supergroup = SUPERGROUP;
+
+        /**
+         * @deprecated use {@link #CHANNEL} instead
+         */
+        @Deprecated
+        public static final Type channel = CHANNEL;
     }
 
     private Long id;
